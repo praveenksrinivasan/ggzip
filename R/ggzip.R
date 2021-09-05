@@ -7,7 +7,7 @@ theme_zip <- function() {
 
   # ggplot2::theme_minimal() %+replace%    #replace elements we want to change
 
-    ggplot2::theme(
+    ggplot2::theme_minimal() + ggplot2::theme(
       # grid elements
       # panel.grid.major = element_blank(),
       # panel.grid.minor = element_blank(),
