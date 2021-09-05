@@ -1,0 +1,99 @@
+library(ggplot2)
+
+# Zip Theme
+theme_zip <- function() {
+  font <- "Work Sans"
+  # font <- "Gelasio"
+
+  ggplot2::theme_minimal() %+replace%    #replace elements we want to change
+
+    theme(
+      # grid elements
+      # panel.grid.major = element_blank(),
+      # panel.grid.minor = element_blank(),
+      # axis.ticks = element_blank(),
+
+      # text elements
+      plot.title = element_text(
+        # set font family
+        family = font,
+        # set font size
+        size = 12.5,
+        # bold typeface
+        # face = 'bold',
+        # left align
+        hjust = 0,
+        # raise slightly
+        vjust = 4
+      ),
+
+      plot.subtitle = element_text(
+        family = font,
+        size = 10,
+        color = "#888888",
+        hjust = 0,
+        vjust = 2
+      ),
+
+      plot.caption = element_text(
+        family = font,
+        size = 8,
+        # right align
+        hjust = 1,
+        vjust = -3
+      ),
+
+      axis.title = element_text(
+        family = font,
+        size = 10
+      ),
+
+      axis.text = element_text(
+        family = font,
+        size = 10
+      ),
+
+      axis.text.x = element_text(
+        margin = margin(1)
+      ),
+
+      plot.margin = margin(0.5, 0.2, 0.5, 0.5, unit = "cm")
+
+      # since the legend often requires manual tweaking
+      # based on plot content, don't define it here
+    )
+}
+
+#' Add zip minimal theme to ggplot chart
+#'
+#' This function allows you to add the zip minimal theme to your ggplotgraphics.
+#' @keywords zip_style
+#' @export
+#' @examples
+#' line <- ggplot(line_df, aes(x = year, y = lifeExp)) +
+#' geom_line(colour = "#007f7f", size = 1) +
+#' geom_hline(yintercept = 0, size = 1, colour="#333333") +
+#' theme_zip_minimal()
+theme_zip_minimal <- function() {
+  theme_zip()
+}
+
+#' Add zip classic theme to ggplot chart
+#'
+#' This function allows you to add the zip classic theme to your ggplotgraphics.
+#' @keywords zip_style
+#' @export
+#' @examples
+#' line <- ggplot(line_df, aes(x = year, y = lifeExp)) +
+#' geom_line(colour = "#007f7f", size = 1) +
+#' geom_hline(yintercept = 0, size = 1, colour="#333333") +
+#' theme_zip_classic()
+theme_zip_classic <- function() {
+  theme_zip() +
+    theme(
+      # grid elements
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.ticks = element_blank(),
+    )
+}
