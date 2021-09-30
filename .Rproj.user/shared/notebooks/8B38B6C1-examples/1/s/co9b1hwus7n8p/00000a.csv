@@ -1,6 +1,0 @@
-"0","ggplot(mtcars, aes(x = mpg, y = disp, color=as.factor(cyl))) +"
-"0","  geom_point(size=3) + "
-"0","  theme_zip_minimal() +"
-"0","  labs(title = ""Displacement vs MPG"") +"
-"0","  theme(legend.position = ""none"") +"
-"0","  scale_color_zip(palette = ""primary"")"

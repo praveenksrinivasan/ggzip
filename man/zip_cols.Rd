@@ -14,5 +14,5 @@ Function to extract Zip colors as hex codes
 }
 \examples{
 zip_cols()
-zip_cols("dark purple 1")
+zip_cols("dark")
 }

@@ -2,7 +2,8 @@ library(ggplot2)
 
 # Zip Theme
 theme_zip <- function() {
-  font <- "Work Sans"
+  font <- "Source Sans Pro"
+  # font <- "Work Sans"
   # font <- "Gelasio"
 
   # ggplot2::theme_minimal() %+replace%    #replace elements we want to change
