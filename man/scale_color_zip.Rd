@@ -19,3 +19,10 @@ scale_color_gradientn(), used respectively when discrete is TRUE or FALSE}
 \description{
 Color scale constructor for zip colors
 }
+\examples{
+ggplot(mtcars, aes(x = mpg, y = disp, color=as.factor(cyl))) +
+geom_point(size=3) +
+theme_minimal() +
+labs(title = "Displacement vs MPG", color="cyl") +
+scale_color_zip()
+}

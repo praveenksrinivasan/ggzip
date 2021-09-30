@@ -21,8 +21,6 @@ zip_colors = c(
 )
 
 #' Zip Primary Color Palette list
-#'
-#' @export
 zip_primary_colors <- list(
   darkest = "#1b1323",
   dark = "#3b115b",
@@ -36,8 +34,6 @@ zip_primary_colors <- list(
 )
 
 #' Zip Secondary Color Palette list
-#'
-#' @export
 zip_secondary_colors <-
   list(
     peach = "#FAE2B9",
@@ -106,12 +102,12 @@ zip_pal <- function(palette = "main", reverse = FALSE, ...) {
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_color_gradientn(), used respectively when discrete is TRUE or FALSE
 #' @export
-#' @example
+#' @examples
 #' ggplot(mtcars, aes(x = mpg, y = disp, color=as.factor(cyl))) +
-#'   geom_point(size=3) +
-#'   theme_minimal() +
-#'   labs(title = "Displacement vs MPG", color="cyl") +
-#'   scale_color_zip()
+#' geom_point(size=3) +
+#' theme_minimal() +
+#' labs(title = "Displacement vs MPG", color="cyl") +
+#' scale_color_zip()
 scale_color_zip <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- zip_pal(palette = palette, reverse = reverse)
 
@@ -131,12 +127,12 @@ scale_color_zip <- function(palette = "main", discrete = TRUE, reverse = FALSE, 
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE
 #' @export
-#' @example
+#' @examples
 #' ggplot(mtcars, aes(x = mpg, fill=as.factor(cyl))) +
-#'   geom_histogram(bins=8) +
-#'   theme_minimal() +
-#'   labs(title = "MPG Distribution", fill="cyl") +
-#'   scale_fill_zip()
+#' geom_histogram(bins=8) +
+#' theme_minimal() +
+#' labs(title = "MPG Distribution", fill="cyl") +
+#' scale_fill_zip()
 scale_fill_zip <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- zip_pal(palette = palette, reverse = reverse)
 

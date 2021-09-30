@@ -75,7 +75,7 @@ theme_zip <- function() {
 #' @examples
 #' require(ggplot2)
 #' require(showtext)
-#' font_add_google(name = "Work Sans", family = "Work Sans")
+#' font_add_google(name = "Source Sans Pro", family = "Source Sans Pro")
 #' showtext_auto()
 #'
 #' ggplot(mtcars, aes(x = mpg, y = disp, color=as.factor(cyl))) +
@@ -94,7 +94,7 @@ theme_zip_minimal <- function() {
 #' @examples
 #' require(ggplot2)
 #' require(showtext)
-#' font_add_google(name = "Work Sans", family = "Work Sans")
+#' font_add_google(name = "Source Sans Pro", family = "Source Sans Pro")
 #' showtext_auto()
 #'
 #' ggplot(mtcars, aes(x = mpg, y = disp, color=as.factor(cyl))) +

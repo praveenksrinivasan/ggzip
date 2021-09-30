@@ -19,3 +19,10 @@ scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE}
 \description{
 Fill scale constructor for zip colors
 }
+\examples{
+ggplot(mtcars, aes(x = mpg, fill=as.factor(cyl))) +
+geom_histogram(bins=8) +
+theme_minimal() +
+labs(title = "MPG Distribution", fill="cyl") +
+scale_fill_zip()
+}
