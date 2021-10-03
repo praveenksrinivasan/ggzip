@@ -1,0 +1,131 @@
+---
+title: "Zip Theme"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Zip Theme}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include=FALSE}
+
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  fig.retina = 3,
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4.5,
+  fig.align = "center"
+)
+```
+
+```{r}
+library(tidyverse)
+library(ggzip)
+library(extrafont)
+```
+
+```{r, eval=FALSE}
+plt_font <- "Titillium Web"
+library(showtext)
+font_add_google(name = plt_font, family = plt_font)
+showtext_auto()
+```
+
+```{r}
+plt <- mpg %>%
+  mutate(mileage = hwy + cty) %>%
+  group_by(class) %>%
+  summarise(avg_mileage = mean(mileage)) %>%
+  arrange(-avg_mileage) %>%
+  mutate(class = fct_reorder(factor(class), avg_mileage)) %>%
+  
+  ggplot(aes(x = avg_mileage, y = class, fill = class)) +
+  geom_col() +
+  geom_text(
+    aes(label = round(avg_mileage)),
+    color = "white",
+    hjust = 1,
+    position = position_nudge(x = -.2),
+    fontface = "bold",
+    size = 3.2
+  ) +
+  labs(
+    x = "Average Mileage",
+    y = "",
+    title = "Distribution of Average Mileage by different Car Class",
+    subtitle = "Mileage in mpg",
+    caption = "Plot: praveen.srinivasan@zip.co\n Dataset: mpg"
+  ) +
+  theme(legend.position = "none") +
+  coord_cartesian(clip = "off")
+```
+
+### Base Theme
+
+```{r}
+plt
+```
+
+
+### With Zip Theme
+
+```{r}
+(
+  plt = plt + 
+  theme_zip_minimal() + 
+  theme(legend.position = "none")
+)
+```
+
+
+### With Zip Theme + Color Palette
+
+```{r}
+(
+  plt = plt + scale_fill_zip()
+)
+```
+
+
+### Plot with logo on bottom right
+
+```{r}
+library(ggtext)
+```
+
+```{r}
+cap = 'Dataset: mpg<br><br><img src="zip_logo_dark.png" height="15">'
+```
+
+```{r}
+plt + labs(caption = cap) +
+  theme(
+    plot.caption = element_markdown()
+  )
+```
+
+
+### Plot with logo on bottom left - align to chart
+
+```{r}
+plt + labs(caption = cap) +
+  theme(
+    plot.caption = element_markdown(hjust = 0)
+  )
+```
+
+
+### Plot with logo on bottom left - align to plot
+
+```{r}
+plt + labs(caption = cap) +
+  theme(
+    plot.caption = element_markdown(hjust = 0),
+    plot.caption.position = "plot",
+    plot.title.position = "plot"
+  )
+```
+

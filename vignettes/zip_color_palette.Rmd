@@ -1,0 +1,86 @@
+---
+title: "Zip Color Palette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Zip Theme}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include=FALSE}
+
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  fig.retina = 3,
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4.5,
+  fig.align = "center"
+)
+```
+
+```{r}
+library(tidyverse)
+library(here)
+library(ggzip)
+```
+
+```{r}
+col_seq <- function(pal = "cool", text_color = "white") {
+  cols <- zip_pal(pal)(10)
+  
+  n_seq <- seq_along(cols)
+  image(
+    n_seq,
+    1,
+    as.matrix(n_seq),
+    col = cols,
+    xlab = "",
+    ylab = "",
+    xaxt = "n",
+    yaxt = "n",
+    bty = "n",
+    # main = paste(pal, "- color palette of Zip Co [10 levels]")
+  )
+  
+  text(n_seq, 1, cols, col = text_color, srt = 90)
+}
+```
+
+### Primary
+
+```{r}
+col_seq("primary")
+```
+
+
+### Secondary
+
+```{r}
+col_seq("secondary", text_color = "black")
+```
+
+
+### Main
+
+```{r}
+col_seq("main")
+```
+
+
+### Hot
+
+```{r}
+col_seq("hot")
+```
+
+
+### Cool 
+
+```{r}
+col_seq("cool", text_color = "black")
+```
+
+

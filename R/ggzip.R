@@ -1,12 +1,18 @@
 library(ggplot2)
 
+fonts = c(
+  "IBM Plex Sans",
+  "Source Sans Pro",
+  "Work Sans",
+  "Titillium Web",
+  "Public Sans Light",
+  "Cooper Light BT",
+  "Sharp Grotesk Light 20"
+)
+
 # Zip Theme
 theme_zip <- function(base_size, base_family, base_line_size, base_rect_size) {
-  # font <- "Source Sans Pro"
-  # font <- "Work Sans"
-  # font <- "Gelasio"
 
-  # ggplot2::theme_minimal() %+replace%    #replace elements we want to change
 
   ggplot2::theme_minimal(base_size = base_size,
                          base_family = base_family,
@@ -17,39 +23,36 @@ theme_zip <- function(base_size, base_family, base_line_size, base_rect_size) {
       # grid elements
       panel.background = ggplot2::element_blank(),
       strip.background = ggplot2::element_rect(fill="white"),
-      # panel.grid.major = element_blank(),
-      # panel.grid.minor = element_blank(),
-      # axis.ticks = element_blank(),
 
-      # # text elements
+      # text elements
       plot.title = ggplot2::element_text(
-      #   # set font family
-      #   # family = base_family,
-      #   # set font size
-      #   # size = 12.5,
-      #   # bold typeface
-      #   # face = 'bold',
-      #   # left align
-      #   hjust = 0,
-      #   # raise slightly
-      #   vjust = 4
+        # set font family
+        # family = base_family,
+        # set font size
+        # size = 12.5,
+        # bold typeface
+        # face = 'bold',
+        # left align
+        hjust = 0,
+        # raise slightly
+        vjust = 2
       ),
 
       plot.subtitle = ggplot2::element_text(
         # family = base_family,
         # size = 10,
-        color = "#888888",
-        # hjust = 0,
-        # vjust = 2
+        hjust = 0,
+        vjust = 2,
+        color = "#888888"
       ),
 
       plot.caption = ggplot2::element_text(
         # family = base_family,
         # size = 8,
         # right align
-        # hjust = 1,
-        color = "#888888",
-        vjust = -3
+        hjust = 1,
+        vjust = -3,
+        color = "#888888"
       ),
 
       # axis.title = ggplot2::element_text(
@@ -90,7 +93,7 @@ theme_zip <- function(base_size, base_family, base_line_size, base_rect_size) {
 #'   labs(title = "Displacement vs MPG")
 theme_zip_minimal <- function(
                        base_size = 11,
-                       base_family = "sans",
+                       base_family = "Titillium Web",
                        base_line_size = base_size / 22,
                        base_rect_size = base_size / 22) {
     theme_zip(
@@ -118,7 +121,7 @@ theme_zip_minimal <- function(
 #'   labs(title = "Displacement vs MPG")
 theme_zip_classic <- function(
                         base_size = 11,
-                        base_family = "sans",
+                        base_family = "Titillium Web",
                         base_line_size = base_size / 22,
                         base_rect_size = base_size / 22) {
   theme_zip(

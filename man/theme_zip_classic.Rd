@@ -6,7 +6,7 @@
 \usage{
 theme_zip_classic(
   base_size = 11,
-  base_family = "sans",
+  base_family = "Titillium Web",
   base_line_size = base_size/22,
   base_rect_size = base_size/22
 )
