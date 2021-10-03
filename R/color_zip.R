@@ -66,11 +66,11 @@ zip_cols <- function(...) {
 #'
 #' @export
 zip_palettes <- list(
-  `main`  = zip_cols("dark", "medium", "fearless"),
+  `main`  = zip_cols("darkest", "dark", "medium", "fearless"),
 
   `hot`   = zip_cols("dark", "medium", "fearless"),
 
-  `cool`  = zip_cols("light", "lighter", "lightest"),
+  `cool`  = zip_cols("fearless", "lighter", "lightest"),
 
   `primary`  = zip_cols("darkest", "dark", "medium", "fearless", "light", "lighter", "lightest"),
 

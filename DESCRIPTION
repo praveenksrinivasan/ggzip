@@ -1,7 +1,7 @@
 Package: ggzip
 Type: Package
 Title: Making GGPlot Graphics In Zip Co Corporate Style And Color Palette
-Version: 0.1.0
+Version: 0.1.1
 Author: Praveen Kumar Srinivasan
 Maintainer: Praveen Kumar Srinivasan <praveen.srinivasan@zip.co>
 Description: Create and style ggplot2 charts with corporate 

@@ -4,7 +4,12 @@
 \alias{theme_zip_minimal}
 \title{Add zip minimal theme to ggplot chart}
 \usage{
-theme_zip_minimal()
+theme_zip_minimal(
+  base_size = 11,
+  base_family = "sans",
+  base_line_size = base_size/22,
+  base_rect_size = base_size/22
+)
 }
 \description{
 This function allows you to add the zip minimal theme to your ggplotgraphics.
@@ -12,7 +17,7 @@ This function allows you to add the zip minimal theme to your ggplotgraphics.
 \examples{
 require(ggplot2)
 require(showtext)
-font_add_google(name = "Work Sans", family = "Work Sans")
+font_add_google(name = "Source Sans Pro", family = "Source Sans Pro")
 showtext_auto()
 
 ggplot(mtcars, aes(x = mpg, y = disp, color=as.factor(cyl))) +

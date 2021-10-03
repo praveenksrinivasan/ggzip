@@ -1,14 +1,19 @@
 library(ggplot2)
 
 # Zip Theme
-theme_zip <- function() {
-  font <- "Source Sans Pro"
+theme_zip <- function(base_size, base_family, base_line_size, base_rect_size) {
+  # font <- "Source Sans Pro"
   # font <- "Work Sans"
   # font <- "Gelasio"
 
   # ggplot2::theme_minimal() %+replace%    #replace elements we want to change
 
-  ggplot2::theme_minimal() + ggplot2::theme(
+  ggplot2::theme_minimal(base_size = base_size,
+                         base_family = base_family,
+                         base_line_size = base_line_size,
+                         base_rect_size = base_rect_size
+                         ) +
+  ggplot2::theme(
       # grid elements
       panel.background = ggplot2::element_blank(),
       strip.background = ggplot2::element_rect(fill="white"),
@@ -16,51 +21,52 @@ theme_zip <- function() {
       # panel.grid.minor = element_blank(),
       # axis.ticks = element_blank(),
 
-      # text elements
+      # # text elements
       plot.title = ggplot2::element_text(
-        # set font family
-        family = font,
-        # set font size
-        size = 12.5,
-        # bold typeface
-        # face = 'bold',
-        # left align
-        hjust = 0,
-        # raise slightly
-        vjust = 4
+      #   # set font family
+      #   # family = base_family,
+      #   # set font size
+      #   # size = 12.5,
+      #   # bold typeface
+      #   # face = 'bold',
+      #   # left align
+      #   hjust = 0,
+      #   # raise slightly
+      #   vjust = 4
       ),
 
       plot.subtitle = ggplot2::element_text(
-        family = font,
-        size = 10,
+        # family = base_family,
+        # size = 10,
         color = "#888888",
-        hjust = 0,
-        vjust = 2
+        # hjust = 0,
+        # vjust = 2
       ),
 
       plot.caption = ggplot2::element_text(
-        family = font,
-        size = 8,
+        # family = base_family,
+        # size = 8,
         # right align
-        hjust = 1,
+        # hjust = 1,
+        color = "#888888",
         vjust = -3
       ),
 
-      axis.title = ggplot2::element_text(
-        family = font,
-        size = 10
-      ),
+      # axis.title = ggplot2::element_text(
+        # family = base_family,
+        # size = 10
+      # ),
 
-      axis.text = ggplot2::element_text(
-        family = font,
-        size = 10
-      ),
+      # axis.text = ggplot2::element_text(
+        # family = base_family,
+        # size = 10
+      # ),
 
       axis.text.x = ggplot2::element_text(
         margin = ggplot2::margin(1)
       ),
 
-      plot.margin = ggplot2::margin(0.5, 0.2, 0.5, 0.5, unit = "cm")
+      plot.margin = ggplot2::margin(0.5, 0.5, 0.5, 0.5, unit = "cm")
 
       # since the legend often requires manual tweaking
       # based on plot content, don't define it here
@@ -82,9 +88,18 @@ theme_zip <- function() {
 #' geom_point(size=3) +
 #'   theme_zip_minimal() +
 #'   labs(title = "Displacement vs MPG")
-theme_zip_minimal <- function() {
-  theme_zip()
-}
+theme_zip_minimal <- function(
+                       base_size = 11,
+                       base_family = "sans",
+                       base_line_size = base_size / 22,
+                       base_rect_size = base_size / 22) {
+    theme_zip(
+      base_size = base_size,
+      base_family = base_family,
+      base_line_size = base_line_size,
+      base_rect_size = base_rect_size
+    )
+  }
 
 #' Add zip classic theme to ggplot chart
 #'
@@ -101,8 +116,17 @@ theme_zip_minimal <- function() {
 #' geom_point(size=3) +
 #'   theme_zip_classic() +
 #'   labs(title = "Displacement vs MPG")
-theme_zip_classic <- function() {
-  theme_zip() +
+theme_zip_classic <- function(
+                        base_size = 11,
+                        base_family = "sans",
+                        base_line_size = base_size / 22,
+                        base_rect_size = base_size / 22) {
+  theme_zip(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ) +
   ggplot2::theme(
       # grid elements
       panel.grid.major = ggplot2::element_blank(),

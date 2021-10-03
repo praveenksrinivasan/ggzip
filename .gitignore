@@ -31,3 +31,6 @@
 # translation temp files
 po/*~
 
+
+fonts/
+logo/
